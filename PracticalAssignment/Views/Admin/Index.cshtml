@@ -1,0 +1,73 @@
+﻿@model IEnumerable<PracticalAssignment.Models.BusinessEntity.UserVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3 class="text-center alert alert-light">Administrator Dashboard</h3>
+<hr />
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.PhoneNumber)
+            </th>
+            <th>
+                Activate/Deactivate 
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => user.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => user.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => user.PhoneNumber)
+                </td>
+                <td>
+                    @{ if (user.EmailConfirmation == true)
+                        {
+                            <b class="text-success">Active</b>
+                        }
+                        else
+                        {
+                            <b class="text-danger">Inactive</b>}
+                    }
+
+                </td>
+                <td>
+                    <a class="btn btn-warning" asp-route-id="@user.Id" asp-action="EditStatus"><i class="fa fa-pencil"></i> Edit Status</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@{
+    if (TempData["LoginSuccess"] != null)
+    {
+        <script>
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Login Successful!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        </script>
+    }
+}

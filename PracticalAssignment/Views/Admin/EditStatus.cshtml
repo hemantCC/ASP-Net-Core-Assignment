@@ -1,0 +1,41 @@
+﻿@model PracticalAssignment.Models.BusinessEntity.UserVM 
+@{
+    ViewData["Title"] = "EditStatus";
+}
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 alert alert-dark">
+        <h3 class="text-center ">Edit Status</h3>
+        <hr />
+        <form asp-action="EditStatus">
+            <div class="form-group mt-4">
+                <strong>User Id</strong>
+                <div>@Html.DisplayFor(model => model.Id)</div>
+            </div>
+            <div class="form-group mt-4">
+                <strong>Personal Email</strong>
+                <div>@Html.DisplayFor(model => model.Email)</div>
+            </div>
+            <div class="form-group mt-4">
+                <strong>PhoneNumber</strong>
+                <div>@Html.DisplayFor(model => model.PhoneNumber)</div>
+            </div>
+            <div class="form-group mt-4">
+                <strong>Account Status</strong>
+                <!--Activate or Deactivate-->
+                @Html.DropDownListFor(Model => Model.EmailConfirmation, new List<SelectListItem>
+                       {
+                            new SelectListItem { Text = "Activate", Value = "True", Selected = true},
+                            new SelectListItem { Text = "Deactivate", Value = "False"},
+                       }, "Select Status", new { @class = "form-control" })
+            </div>
+            <button class="btn btn-success col-md-4" type="submit"><i class="fa fa-save"></i> Save</button>
+            @Html.ActionLink("Go Back","Index","Admin",null,new { @class="btn btn-danger"})
+
+
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
+

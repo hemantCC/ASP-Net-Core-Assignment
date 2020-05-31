@@ -1,0 +1,96 @@
+﻿@model IEnumerable<PracticalAssignment.Models.BusinessEntity.RetailerVM>
+@{
+    ViewData["Title"] = "RetailerProfile";
+}
+
+<div class="text-center display-4 mb-2">Retailers Profile</div>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                PersonalEmail
+            </th>
+            <th>
+                BusinessEmail
+            </th>
+            <th>
+                ContactNumber
+            </th>
+            <th>
+                Address1
+            </th>
+            <th>
+                Address2
+            </th>
+            <th>
+                City
+            </th>
+            <th>
+                State
+            </th>
+            <th>
+                Zipcode
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var retailer in Model)
+        {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => retailer.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => retailer.PersonalEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => retailer.BusinessEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => retailer.ContactNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => retailer.Address1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => retailer.Address2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => retailer.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => retailer.State)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => retailer.Zipcode)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+@*@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @nextDisabled">
+    Next
+</a>*@

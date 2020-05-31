@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-PracticalAssignment-D235FF3C-91A9-4030-8EBD-87CF97C754EB</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20200526130704_addModelsRetailerAndCustomer.cs" />
+    <Compile Remove="Data\Migrations\20200526130704_addModelsRetailerAndCustomer.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200528064429_addTablesOrderAndOrderDetail.cs" />
+    <Compile Remove="Data\Migrations\20200528064429_addTablesOrderAndOrderDetail.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200529112050_addTableCart.cs" />
+    <Compile Remove="Data\Migrations\20200529112050_addTableCart.Designer.cs" />
+    <Compile Remove="Data\Migrations\20200529124134_addVirtualToProductInCart.cs" />
+    <Compile Remove="Data\Migrations\20200529124134_addVirtualToProductInCart.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
+    <PackageReference Include="NETCore.MailKit" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\image\" />
+    <Folder Include="wwwroot\photos\" />
+  </ItemGroup>
+
+</Project>

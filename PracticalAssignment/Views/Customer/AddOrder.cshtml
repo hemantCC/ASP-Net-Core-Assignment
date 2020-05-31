@@ -1,0 +1,50 @@
+﻿@model PracticalAssignment.Models.BusinessEntity.ProductVM 
+@{
+    ViewData["Title"] = "AddOrder";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <img class="" src="@("~/image/"+ @Model.Photo)" asp-append-version="true" alt="Card image cap"  height="500" width="400">
+
+    </div>
+    <div class="col-md-6 alert alert-dark">
+        <h3 class="text-center ">Confirm your Order</h3>
+        <hr />
+        @using (Html.BeginForm("ConfirmOrder", "Customer", FormMethod.Post))
+        {
+
+
+            @*<form asp-action="ConfirmOrder">*@
+            <div class="form-group mt-4">
+                <strong>Product Name: </strong>
+                <div>@Html.DisplayFor(model => model.ProductName)</div>
+            </div>
+            <div class="form-group mt-4">
+                <strong>Category: </strong>
+                <div>@Html.DisplayFor(model => model.Category)</div>
+            </div>
+            <div class="form-group mt-4">
+                <strong>Quantity: </strong>
+                <div>@Html.DisplayFor(model => model.Quantity, new { name = "Quantity" })</div>
+            </div>
+            <div class="form-group mt-4">
+                <strong>Unit: </strong>
+                <div>@Html.DisplayFor(model => model.Unit)</div>
+            </div>
+            <div class="form-group mt-4">
+                <strong>Unit Amount: </strong>
+                <div>@Html.DisplayFor(model => model.UnitPrice)</div>
+            </div>
+            
+            @*@Html.ActionLink("Confirm Order","ConfirmOrder","Customer",new { Id = Model.ProductId})*@
+            <button class="btn btn-success col-md-4" type="submit" asp-action="ConfirmOrder" asp-route-id="@Model.ProductId"><i class="fa fa-shopping-cart mr-2"></i> Place Order</button>
+
+        }
+  @*      </form>*@
+    </div>
+</div>
+
+
+
+

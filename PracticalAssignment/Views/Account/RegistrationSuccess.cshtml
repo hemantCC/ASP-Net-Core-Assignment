@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "RegistrationSuccess";
+}
+
+<div class="alert alert-success">
+    <h1>RegistrationSuccess</h1>
+    Confirmation Mail has been send to your Email!
+</div>
+
+@{
+    if (TempData["successLogin"] != null)
+    {
+        <script>
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Registration Successfull!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        </script>
+    }
+
+}

@@ -1,0 +1,75 @@
+﻿@model PracticalAssignment.Models.BusinessEntity.RetailerVM
+@{
+    ViewData["Title"] = "Register";
+}
+
+<form method="post">
+    <div class="row alert alert-dark mx-5">
+        <h3 class="text-center col-md-12">Retailer Registration</h3>
+        
+        <div class="col-md-6">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactNumber"></label>
+                <input asp-for="ContactNumber" class="form-control" />
+                <span asp-validation-for="ContactNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address1"></label>
+                <input asp-for="Address1" class="form-control" />
+                <span asp-validation-for="Address1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address2"></label>
+                <input asp-for="Address2" class="form-control" />
+                <span asp-validation-for="Address2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="State"></label>
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+
+        </div>
+        <div class="col-md-6" style="margin-top:14px;">
+
+            <div class="form-group">
+                <label asp-for="Zipcode"></label>
+                <input asp-for="Zipcode" class="form-control" />
+                <span asp-validation-for="Zipcode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BusinessEmail"></label>
+                <input asp-for="BusinessEmail" class="form-control" />
+                <span asp-validation-for="BusinessEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PersonalEmail"></label>
+                <input asp-for="PersonalEmail" class="form-control" />
+                <span asp-validation-for="PersonalEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary col-md-6 float-right mt-5">Register</button>
+        </div>
+    </div>
+</form>
+

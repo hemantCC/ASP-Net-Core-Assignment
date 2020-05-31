@@ -1,0 +1,100 @@
+﻿@model PracticalAssignment.Models.BusinessEntity.ProductVM
+@{
+    ViewData["Title"] = "AddProduct";
+}
+
+<script>
+    function PreviewImage(input)
+    {
+        if (input.files && input.files[0])
+        {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#Image1').prop('src', e.target.result)
+                    .width(400)
+                    .height(400);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
+
+<form asp-action="AddProduct" enctype="multipart/form-data">
+    <div class="row px-5  mx-5">
+        <div class="col-md-6">
+            <h1 class="display-4">AddProduct</h1>
+            <hr />
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProductName" class="control-label"></label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Category" class="control-label"></label>
+                    @Html.DropDownListFor(Model => Model.Category, new List<SelectListItem>
+                               {
+                                    new SelectListItem { Text = "Cloths", Value = "Cloths"  },
+                                    new SelectListItem { Text = "Grocery", Value = "Grocery"},
+                                    new SelectListItem { Text = "HouseKeeping", Value = "HouseKeeping"},
+                                    new SelectListItem { Text = "Electric", Value = "Electric"},
+                                    new SelectListItem { Text = "Stationary", Value = "Stationary"},
+                               }, "Select Category", new { @class = "form-control" })
+                    <span asp-validation-for="Category" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Unit" class="control-label"></label>
+                    @Html.DropDownListFor(Model => Model.Unit, new List<SelectListItem>
+                               {
+                                    new SelectListItem { Text = "Pcs.", Value = "Pcs."},
+                                    new SelectListItem { Text = "Dozen", Value = "Dozen"},
+                                    new SelectListItem { Text = "Pack", Value = "Pack"},
+                                    new SelectListItem { Text = "Kgs", Value = "Kgs"},
+                               }, "Select Unit", new { @class = "form-control" })
+                    <span asp-validation-for="Unit" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="UnitPrice" class="control-label"></label>  <span>&#8377;</span>
+                <input asp-for="UnitPrice" class="form-control" />
+                <span asp-validation-for="UnitPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicableDiscount" class="control-label"></label>  <span>&#8377;</span>
+                <input asp-for="ApplicableDiscount" class="form-control" />
+                <span asp-validation-for="ApplicableDiscount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                @Html.DropDownListFor(Model => Model.Status, new List<SelectListItem>
+                       {
+                            new SelectListItem { Text = "In Stock", Value = "In Stock", Selected = true},
+                            new SelectListItem { Text = "Out of Stock", Value = "Out of Stock"},
+                       }, "Select Status", new { @class = "form-control" })
+
+
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6 " style="margin-top:7%">
+            
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label"></label>
+                <input type="file" asp-for="ImageFile" accept="Image/*" required onchange="PreviewImage(this);"/>
+                <img id="Image1" asp-append-version="true" width="400" height="400" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add Product" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Go Back</a>
+            </div>
+        </div>
+
+
+    </div>
+</form>
+
+
