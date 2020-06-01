@@ -16,6 +16,10 @@ namespace PracticalAssignment.Controllers
 
         public UserManager<IdentityUser> UserManager { get; }
 
+
+        ///<summary>
+        /// This Confirms Email by the link send to User 
+        /// </summary>
         public async Task<IActionResult> ConfirmEmail(string UserId, string Token)
         {
             var user = await UserManager.FindByIdAsync(UserId);
@@ -23,7 +27,7 @@ namespace PracticalAssignment.Controllers
             {
                 return BadRequest();
             }
-            var result = await UserManager.ConfirmEmailAsync(user , Token);
+            var result = await UserManager.ConfirmEmailAsync(user , Token); //Confirms User 
             if (result.Succeeded)
             {
                 return RedirectToAction("Index","Home");

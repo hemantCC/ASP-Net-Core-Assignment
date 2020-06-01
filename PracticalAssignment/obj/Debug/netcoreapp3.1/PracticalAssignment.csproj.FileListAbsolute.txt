@@ -162,7 +162,6 @@ C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcorea
 C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Index.cshtml.g.cs
 C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Index.cshtml.g.cs
 C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcoreapp3.1\Razor\Views\Retailer\Index.cshtml.g.cs
-C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcoreapp3.1\PracticalAssignment.csprojAssemblyReference.cache
 C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Antiforgery.dll
 C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
 C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\bin\Debug\netcoreapp3.1\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
@@ -442,9 +441,6 @@ C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\bin\Debug\netcorea
 C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\bin\Debug\netcoreapp3.1\MimeKit.dll
 C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\bin\Debug\netcoreapp3.1\NETCore.MailKit.dll
 C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
-C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcoreapp3.1\PracticalAssignment.csproj.CoreCompileInputs.cache
-C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcoreapp3.1\PracticalAssignment.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcoreapp3.1\PracticalAssignment.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcoreapp3.1\Razor\Views\Account\RegistrationSuccess.cshtml.g.cs
 C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcoreapp3.1\Razor\Views\Retailer\OrdersForRetailer.cshtml.g.cs
 C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcoreapp3.1\Razor\Views\Admin\RetailerProfile.cshtml.g.cs
@@ -453,3 +449,8 @@ C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcorea
 C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcoreapp3.1\Razor\Views\Retailer\EditProduct.cshtml.g.cs
 C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Order.cshtml.g.cs
 C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcoreapp3.1\Razor\Views\Admin\OrderDetail.cshtml.g.cs
+C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcoreapp3.1\Razor\Views\Error\Error.cshtml.g.cs
+C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcoreapp3.1\PracticalAssignment.csprojAssemblyReference.cache
+C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcoreapp3.1\PracticalAssignment.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcoreapp3.1\PracticalAssignment.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\DELL\Desktop\PracticalAssignment\PracticalAssignment\obj\Debug\netcoreapp3.1\PracticalAssignment.MvcApplicationPartsAssemblyInfo.cache

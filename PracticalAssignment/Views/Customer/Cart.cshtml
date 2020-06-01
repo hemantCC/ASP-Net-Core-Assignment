@@ -81,3 +81,29 @@
         Your Cart is Empty
     </div>
 }
+@{
+    if (TempData["EmptyCart"] != null)
+    {
+        <script>
+            Swal.fire({
+                position: 'top-end',
+                icon: 'warning',
+                title: 'Cart Empty!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        </script>
+    }
+    if (TempData["AlreadyEmpty"] != null)
+    {
+        <script>
+            Swal.fire({
+                position: 'top-end',
+                icon: 'warning',
+                title: 'Already Empty!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        </script>
+    }
+}

@@ -21,6 +21,7 @@
 
 
 <form asp-action="AddProduct" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
     <div class="row px-5  mx-5">
         <div class="col-md-6">
             <h1 class="display-4">AddProduct</h1>
@@ -80,10 +81,10 @@
             </div>
         </div>
         <div class="col-md-6 " style="margin-top:7%">
-            
+
             <div class="form-group">
                 <label asp-for="ImageFile" class="control-label"></label>
-                <input type="file" asp-for="ImageFile" accept="Image/*" required onchange="PreviewImage(this);"/>
+                <input type="file" asp-for="ImageFile" accept="Image/*" required onchange="PreviewImage(this);" />
                 <img id="Image1" asp-append-version="true" width="400" height="400" />
                 <span asp-validation-for="ImageFile" class="text-danger"></span>
             </div>

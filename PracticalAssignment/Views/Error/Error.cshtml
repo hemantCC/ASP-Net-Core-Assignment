@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Error";
+}
+
+    <div class="row mx-5">
+        <div class="display-3">An Error has Occured while processing your Request. We will Solve it in soon. </div>
+        <div class="alert alert-danger">
+            <strong>Exception Path: </strong> @ViewBag.ExceptionPath
+        </div><br />
+        <div class="alert alert-danger">
+            <strong>Exception Message: </strong> @ViewBag.ExceptionMessage
+        </div><br />
+        <div class="alert alert-danger">
+            <div>
+                <strong>Note: This Alert is only for Development Purpose.</strong>
+            </div>
+            <strong>Exception Stack Trace: </strong> @ViewBag.StackTrace
+        </div>
+    </div>
+
+
+

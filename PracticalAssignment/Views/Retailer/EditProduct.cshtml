@@ -27,6 +27,7 @@
         </div>
 
         <form class="row" style="width:100%" asp-action="EditProduct" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
             <div class="col-md-6">
                 <div class="form-group">
                     <strong>Update Image:</strong>
@@ -40,7 +41,6 @@
 
 
             <div class="col-md-6 ">
-
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="ProductName" class="control-label"></label>

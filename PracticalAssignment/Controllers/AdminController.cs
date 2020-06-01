@@ -15,6 +15,11 @@ using AutoMapper.QueryableExtensions;
 
 namespace PracticalAssignment.Controllers
 {
+
+    /// <summary>
+    /// This Controller performs All Administrator tasks
+    /// </summary>
+    
     [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
@@ -32,19 +37,22 @@ namespace PracticalAssignment.Controllers
         }
 
 
+        /// <summary>
+        /// Shows Administrator all the Users
+        /// </summary>
+        /// <returns>AspNetUsers</returns>
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            List<IdentityUser> DomainUsers = _userManager.Users.ToList();
+            List<IdentityUser> DomainUsers = await _userManager.Users.ToListAsync();
             List<UserVM> UserVms = new List<UserVM>();
+
+            /*
+                Assigining values of AspNetUsers
+                to the DTO Model (UserVM)
+             */
             foreach (var user in DomainUsers)
             {
-                // Resolve the user via their email
-                var userTemp = await _userManager.FindByEmailAsync(user.Email);
-
-                // Get the roles for the user
-                var roles = await _userManager.GetRolesAsync(userTemp);
-
                 UserVM userVM = new UserVM()
                 {
                     Id = user.Id,
@@ -58,6 +66,7 @@ namespace PracticalAssignment.Controllers
         }
 
 
+        //Show Edit View for selected User
         [HttpGet]
         public async Task<IActionResult> EditStatus(string id)
         {
@@ -71,7 +80,11 @@ namespace PracticalAssignment.Controllers
             return View(userVM);
         }
 
-
+        /// <summary>
+        /// Edits AspNetUser EmailConfirmation property
+        /// </summary>
+        /// <param name="userVM"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> EditStatus(UserVM userVM)
         {
@@ -82,34 +95,49 @@ namespace PracticalAssignment.Controllers
             return RedirectToAction("Index");
         }
 
+
+        //This method gets all Retailers Profile
         [HttpGet]
-        public async Task<IActionResult> RetailerProfile(int PageNumber = 1)
+        public async Task<IActionResult> RetailerProfile()
         {
             List<Retailer> DomainRetailers = await _context.Retailer.ToListAsync();
+
+            //Mapping Object Using AutoMapper
             List<RetailerVM> RetailesDTO = _mapper.Map<List<Retailer>, List<RetailerVM>>(DomainRetailers);
             return View(RetailesDTO);
         }
 
+        //This method gets all Customers Profile
         [HttpGet]
-        public IActionResult CustomerProfile()
+        public async Task<IActionResult> CustomerProfile()
         {
-            List<Customer> DomainCustomer = _context.Customer.ToList();
+            List<Customer> DomainCustomer = await _context.Customer.ToListAsync();
+
+            //Mapping Object Using AutoMapper
             List<CustomerVM> CustomerDTO = _mapper.Map<List<Customer>, List<CustomerVM>>(DomainCustomer);
             return View(CustomerDTO);
         }
 
+
+        //This method gets all Orders
         [HttpGet]
-        public IActionResult Order()
+        public async Task<IActionResult> Order()
         {
-            List<Order> order = _context.Order.Include("Customer").ToList();
+            List<Order> order = await _context.Order.Include("Customer").ToListAsync();
+
+            //Mapping Object Using AutoMapper
             List<OrderVM> OrderDTO = _mapper.Map<List<Order>, List<OrderVM>>(order);
             return View(OrderDTO);
         }
 
+
+        //This method gets all OrderDetails
         [HttpGet]
-        public IActionResult OrderDetail()
+        public async Task<IActionResult> OrderDetail()
         {
-            List<OrderDetail> order = _context.OrderDetail.Include("Product").ToList();
+            List<OrderDetail> order = await _context.OrderDetail.Include("Product").ToListAsync();
+
+            //Mapping Object Using AutoMapper
             List<OrderDetailVM> OrderDTO = _mapper.Map<List<OrderDetail>, List<OrderDetailVM>>(order);
             return View(OrderDTO);
         }
